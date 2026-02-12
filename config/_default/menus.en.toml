@@ -6,13 +6,13 @@
 [[main]]
   identifier = "github"
   pre = "github"
-  url = "https://github.com/tjbrownai"
+  url = "https://github.com/sqltj"
   weight = 20
 
 [[main]]
   identifier = "linkedin"
   pre = "linkedin"
-  url = "https://linkedin.com/in/tjbrownai"
+  url = "https://www.linkedin.com/in/sqltj/"
   weight = 30
 
  [[footer]]
