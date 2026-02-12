@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://sqltj.github.io/tjbrownai-blog/"
+baseURL = "https://tjbrown.ai/"
 defaultContentLanguage = "en"
 disableLanguages = ["fr", "de", "it", "pt-br", "es", "pt-pt", "ja", "zh-cn"]
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
