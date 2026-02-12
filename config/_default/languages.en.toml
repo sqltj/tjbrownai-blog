@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "TJ Brown | Tech Blog"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "img/author2.png"
+  description = "Exploring the intersection of AI, software engineering, and the future of technology."
+
+[params.author]
+  name = "TJ Brown"
+  email = "tj@example.com"
+  headline = "Software Architect & AI Enthusiast"
+  bio = "I build intelligent systems and write about the future of technology. Focused on high-scale software architecture, LLMs, and innovative user experiences."
+  links = [
+    { github = "https://github.com/tjbrownai" },
+    { linkedin = "https://linkedin.com/in/tjbrownai" },
+  ]

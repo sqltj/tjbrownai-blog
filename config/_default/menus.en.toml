@@ -1,0 +1,26 @@
+[[main]]
+  name = "Blog"
+  pageRef = "blog"
+  weight = 10
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/tjbrownai"
+  weight = 20
+
+[[main]]
+  identifier = "linkedin"
+  pre = "linkedin"
+  url = "https://linkedin.com/in/tjbrownai"
+  weight = 30
+
+ [[footer]]
+   name = "Tags"
+   pageRef = "tags"
+   weight = 10
+
+ [[footer]]
+   name = "Authors"
+   pageRef = "authors"
+   weight = 20
