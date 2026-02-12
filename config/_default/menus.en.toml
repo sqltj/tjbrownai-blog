@@ -4,16 +4,38 @@
   weight = 10
 
 [[main]]
+  name = "Categories"
+  weight = 20
+
+[[main]]
+  parent = "Categories"
+  name = "Databricks"
+  pageRef = "categories/databricks"
+  weight = 10
+
+[[main]]
+  parent = "Categories"
+  name = "Fabric"
+  pageRef = "categories/fabric"
+  weight = 20
+
+[[main]]
+  parent = "Categories"
+  name = "AI"
+  pageRef = "categories/ai"
+  weight = 30
+
+[[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/sqltj"
-  weight = 20
+  weight = 40
 
 [[main]]
   identifier = "linkedin"
   pre = "linkedin"
   url = "https://www.linkedin.com/in/sqltj/"
-  weight = 30
+  weight = 50
 
  [[footer]]
    name = "Tags"
