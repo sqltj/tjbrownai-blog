@@ -49,6 +49,30 @@ draft: false
 ---
 ```
 
+### Adding Images
+
+To include images in your posts:
+
+1.  Place your image file in `static/img/`.
+2.  Reference it in your markdown file using the following syntax:
+
+```markdown
+![Description of image](/img/your-image.png)
+```
+
+Alternatively, you can use Hugo's [Page Bundles](https://gohugo.io/content-management/page-bundles/) by creating a folder for your post and keeping the image inside that folder.
+
+### Adding Code Blocks
+
+Use triple backticks followed by the language identifier for syntax highlighting:
+
+```markdown
+```python
+def hello_world():
+    print("Hello, AI!")
+```
+```
+
 ## 🛠 Configuration
 
 - **General Settings**: `config/_default/hugo.toml`
