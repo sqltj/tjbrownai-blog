@@ -17,6 +17,6 @@ title = "TJ Brown | Tech Blog"
   headline = "Software Architect & AI Enthusiast"
   bio = "I build intelligent systems and write about the future of technology. Focused on high-scale software architecture, LLMs, and innovative user experiences."
   links = [
-    { github = "https://github.com/tjbrownai" },
-    { linkedin = "https://linkedin.com/in/tjbrownai" },
+    { github = "https://github.com/sqltj" },
+    { linkedin = "https://www.linkedin.com/in/sqltj/" },
   ]
