@@ -10,6 +10,7 @@ experiences:
       name: Trility Consulting
       url: "https://trility.io/"
       location: Orlando, FL
+      logo: "https://cdn.prod.website-files.com/62c484166cb1a042882a601a/667eddcc7b1d7e4e9ae80c27_trility-logo-rgb-white-text-sm.png"
     positions:
       - designation: Engineering Manager & Sr. Cloud Data & AI Consultant
         start: May 2025
@@ -27,6 +28,7 @@ experiences:
       name: Microsoft
       url: "https://www.microsoft.com/"
       location: Remote
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png"
     positions:
       - designation: Sr. Technical Specialist
         start: Nov 2024
@@ -57,6 +59,7 @@ experiences:
       name: Pragmatic Works Consulting
       url: "https://pragmaticworks.com/"
       location: Remote
+      logo: "https://pragmaticworks.com/hubfs/PragmaticWorks-1.png"
     positions:
       - designation: Sr. Business Intelligence Consultant
         start: Nov 2011
