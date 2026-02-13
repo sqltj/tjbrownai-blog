@@ -9,16 +9,19 @@ experiences:
   - company:
       name: Trility Consulting
       url: "https://trility.io/"
-      location: Remote
+      location: Orlando, FL
     positions:
       - designation: Engineering Manager & Sr. Cloud Data & AI Consultant
         start: May 2025
         end: Present
         responsibilities:
-          - Led a high-performing team of Data & AI consultants and architects.
-          - Served as technical subject matter expert in presales conversations.
-          - Architected Greenfield Microsoft Fabric implementations for a national homebuilder.
-          - Engineered proprietary solution accelerators and reusable frameworks.
+          - Led a high-performing team of Data & AI consultants and architects, establishing technical standards, cultivating deep expertise in modern data platforms, and driving consistent delivery excellence across complex client engagements
+          - Served as technical subject matter expert in presales conversations, translating complex client requirements into actionable technical solutions and competitive proposals
+          - Spearheaded architecture and implementation for high-stakes engagements for enterprise clients, designing and implementing cloud-native data platforms that transformed analytics capabilities, drove data-driven decision-making, and delivered measurable business value across multi-million-dollar initiatives
+          - Architected Greenfield Microsoft Fabric implementations for a national homebuilder
+          - Drove strategic hiring initiatives to scale the data practice, identifying and recruiting top-tier talent aligned with organizational growth objectives
+          - Authored Statements of Work defining project scope, deliverables, timelines, and success criteria for data architecture and AI implementation projects
+          - Engineered proprietary solution accelerators and reusable frameworks that streamlined project delivery cycles, reduced implementation risk, and strengthened the firm's competitive positioning in client pursuits
 
   - company:
       name: Microsoft
@@ -29,22 +32,26 @@ experiences:
         start: Nov 2024
         end: Mar 2025
         responsibilities:
-          - Collaborated with Account Executives to drive Data & AI strategy using Azure Data Platform.
-          - Enabled manufacturers with Microsoft Fabric, Databricks, and Azure AI.
-          - Engaged with Director and C-level technical leaders on AI strategy.
+          - Collaborated with Account Executives and Sales Specialists to drive Data & AI strategy in customer accounts using the Azure Data Platform and Azure AI.
+          - Skilled in pre-sales strategy, solution architecture, technical consulting, and helping enterprises optimize operations with predictive analytics, IoT, and smart manufacturing.
+          - Adept at delivering high-impact demos and leading technical engagements to showcase AI-driven solutions.
+          - Engaged with Director and C-level technical leaders, effectively communicating complex AI and data strategies to drive executive alignment, business strategy, and decision-making.
+          - Passionate about enabling manufacturers with Microsoft Fabric, Azure Databricks, Azure AI, and Power BI to enhance operations, supply chains, predictive maintenance, and Industry 4.0 initiatives.
       - designation: Sr. Data & AI Consultant
         start: Mar 2020
         end: Nov 2024
         responsibilities:
-          - Led multimillion dollar data estate modernization projects.
-          - Increased scalability by over 400% and reduced report development time by 50%.
-          - Served as a trusted data strategy advisor to seven Fortune 500 companies.
+          - Accumulated over 11 years of experience of leading teams of consultants to create successful modern data analytics products in the Azure cloud data platform
+          - Served as a trusted data strategy advisor to seven Fortune 500 companies, in addition to state and federal government agencies
+          - Led multimillion dollar data estate modernization projects with data engineering, data analytics, and secure cloud data platforms that increased scalability be over 400% and reduced report development time by 50%.
+          - Enhanced project success by conducting thorough candidate interviews and strategically aligning team members' skills with project requirements. This approach ensured efficient project execution, resulting in a 20% increase in overall project satisfaction surveys
+          - Facilitated product envisioning sessions with key stakeholders to meticulously define project requirements, establish Service Level Agreements (SLAs), outline project scope, and effectively manage stakeholder relationships
+          - Collaborated closely with management to interview potential new hires for both behavioral and technical factors for success
       - designation: Data & AI Consultant
         start: Apr 2017
         end: Mar 2020
         responsibilities:
-          - Led teams of consultants to create successful modern data analytics products.
-          - Enhanced project success by strategically aligning team members' skills.
+          - (Roles and responsibilities shared with Sr. Consultant role above per resume structure)
 
   - company:
       name: Pragmatic Works Consulting
@@ -55,6 +62,9 @@ experiences:
         start: Nov 2011
         end: Apr 2017
         responsibilities:
-          - Specializing in BI, data engineering, and data warehousing.
-          - Achieved an over 80% sales conversion rate in pre-sales demonstrations.
-          - Served as a professional trainer for Power BI, SSAS, and SSRS.
+          - Accumulated over five years of consulting expertise specializing in the business intelligence, data engineering, analytics engineering, and data warehousing in a Microsoft Gold Partner consulting firm
+          - Conducted technical pre-sales demonstrations Microsoft Solution Specialists, showcasing the capabilities and value of Microsoft solutions to prospective clients. This initiative-taking engagement led to an over 80% sales conversion rate.
+          - Functioned as an on-demand virtual mentor and expert, providing guidance in the fields of data warehousing, data engineering, data analytics, DAX, and Power BI.
+          - Gathered reporting and analytical requirements from key stakeholders and created data models for data warehouses, data marts, and Power BI datasets.
+          - Served as a professional trainer for Power BI, SSAS, SSRS, and T-SQL classes, while maintaining excellent customer satisfaction scores.
+          - Co-developed course content for professional training classes
