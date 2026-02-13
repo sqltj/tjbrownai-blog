@@ -2,37 +2,77 @@ section:
   name: Skills
   id: skills
   enable: true
-  weight: 1
+  weight: 2
   showOnNavbar: true
+  filter: true
+
+buttons:
+  - name: All
+    filter: "all"
+  - name: Data Platforms
+    filter: "platforms"
+  - name: Analysis & Visualization
+    filter: "analysis"
+  - name: Programming & Databases
+    filter: "programming"
 
 skills:
-  - name: Data Platforms
-    items:
-      - name: Microsoft Fabric
-        icon: images/sections/skills/cloud.png
-      - name: Databricks
-        icon: images/sections/skills/cloud.png
-      - name: Azure Synapse
-        icon: images/sections/skills/cloud.png
-      - name: Azure Data Factory
-        icon: images/sections/skills/cloud.png
-      - name: Azure
-        icon: images/sections/skills/cloud.png
-  - name: Analysis & Visualization
-    items:
-      - name: Power BI
-        icon: images/sections/skills/cloud.png
-      - name: Data Modeling
-        icon: images/sections/skills/cloud.png
-  - name: Programming & Databases
-    items:
-      - name: SQL
-        icon: images/sections/skills/cloud.png
-      - name: Python
-        icon: images/sections/skills/python.png
-      - name: PySpark
-        icon: images/sections/skills/cloud.png
-      - name: Azure SQL
-        icon: images/sections/skills/cloud.png
-      - name: SQL Server
-        icon: images/sections/skills/cloud.png
+  - name: Microsoft Fabric
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["platforms"]
+  
+  - name: Databricks
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["platforms"]
+  
+  - name: Azure Synapse
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["platforms"]
+  
+  - name: Azure Data Factory
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["platforms"]
+  
+  - name: Azure
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["platforms"]
+
+  - name: Power BI
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["analysis"]
+  
+  - name: Data Modeling
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["analysis"]
+
+  - name: SQL
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["programming"]
+  
+  - name: Python
+    logo: images/sections/skills/python.png
+    summary: ""
+    categories: ["programming"]
+  
+  - name: PySpark
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["programming"]
+  
+  - name: Azure SQL
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["programming"]
+  
+  - name: SQL Server
+    logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["programming"]
