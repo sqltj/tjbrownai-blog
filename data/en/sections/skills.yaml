@@ -12,11 +12,11 @@ skills:
         icon: images/sections/skills/cloud.png
       - name: Databricks
         icon: images/sections/skills/cloud.png
-      - name: Azure
-        icon: images/sections/skills/cloud.png
       - name: Azure Synapse
         icon: images/sections/skills/cloud.png
       - name: Azure Data Factory
+        icon: images/sections/skills/cloud.png
+      - name: Azure
         icon: images/sections/skills/cloud.png
   - name: Analysis & Visualization
     items:
