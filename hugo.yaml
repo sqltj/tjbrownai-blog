@@ -1,0 +1,85 @@
+baseURL: https://tjbrown.ai/
+languageCode: en-us
+title: "TJ Brown | Tech Blog"
+theme: toha
+
+# Manage languages
+languages:
+  en:
+    languageCode: en
+    languageName: English
+    title: "TJ Brown | Tech Blog"
+    weight: 1
+
+# default language for the content
+defaultContentLanguage: en
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Enable global emoji support
+enableEmoji: true
+
+# Site parameters
+params:
+  # GitHub repo of your site
+  gitRepo: https://github.com/sqltj/tjbrownai-blog
+  # Default branch of your Git repo
+  gitBranch: main
+
+  # Configure various features of this theme
+  features:
+    theme:
+      enable: true
+      services:
+        light: true
+        dark: true
+        default: dark # Prefer dark mode for high-tech look
+
+    # Enable and configure blog posts
+    blog:
+      enable: true
+      showAuthor: true
+      shareButtons:
+        linkedin: true
+        twitter: true
+        email: true
+
+    # specify whether you want to show Table of Contents in reading page
+    toc:
+      enable: true
+
+    # Show tags under the post title
+    tags:
+      enable: true
+      on_card: true
+
+    # Enables copy code button
+    copyCodeButton:
+      enable: true
+
+  # Provide footer configuration.
+  footer:
+    enable: true
+    navigation:
+      enable: true
+      customMenus: true
+    contactMe:
+      enable: true
+    credentials:
+      enable: true

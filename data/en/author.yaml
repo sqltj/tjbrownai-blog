@@ -1,0 +1,15 @@
+name: "TJ Brown"
+nickname: "TJ"
+greeting: "Hi, I am"
+subtitle: "Software Architect & AI Enthusiast"
+image: "images/author/john.png" # Using placeholder from example
+contactInfo:
+  email: "tj@example.com"
+  github: sqltj
+  linkedin: sqltj
+
+summary:
+  - Software Architect
+  - AI Enthusiast
+  - Data Engineer
+  - Exploring Databricks, Fabric, and AI

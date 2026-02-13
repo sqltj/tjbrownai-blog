@@ -1,0 +1,12 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 10
+  showOnNavbar: true
+
+title: Software Architect & AI Enthusiast
+content: |
+  I build intelligent systems and write about the future of technology. Focused on high-scale software architecture, LLMs, and innovative user experiences.
+  
+  I am particularly interested in the intersection of Data and AI, exploring platforms like Databricks and Microsoft Fabric to build modern data architectures.

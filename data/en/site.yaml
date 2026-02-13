@@ -1,0 +1,16 @@
+copyright: "© 2026 TJ Brown"
+description: "Professional blog of TJ Brown exploring AI, Databricks, and Fabric."
+
+customMenus:
+- name: Databricks
+  url: /categories/databricks/
+- name: Fabric
+  url: /categories/fabric/
+- name: AI
+  url: /categories/ai/
+
+openGraph:
+  title: "TJ Brown | Tech Blog"
+  type: website
+  description: "Exploring the intersection of AI, software engineering, and the future of technology."
+  url: https://tjbrown.ai
