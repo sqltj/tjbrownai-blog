@@ -1,6 +1,6 @@
 section:
-  name: Accomplishments
-  id: accomplishments
+  name: Certifications
+  id: certifications
   enable: true
   weight: 4
   showOnNavbar: true

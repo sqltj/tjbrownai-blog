@@ -12,11 +12,37 @@ skills:
         icon: images/sections/skills/cloud.png
       - name: Databricks
         icon: images/sections/skills/cloud.png
-      - name: Azure
-        icon: images/sections/skills/cloud.png
       - name: Azure Synapse
         icon: images/sections/skills/cloud.png
       - name: Azure Data Factory
+        icon: images/sections/skills/cloud.png
+  - name: AI & Machine Learning
+    items:
+      - name: JAX/Flax
+        icon: images/sections/skills/python.png
+      - name: Pydantic AI
+        icon: images/sections/skills/python.png
+      - name: LangGraph
+        icon: images/sections/skills/python.png
+      - name: Amazon Bedrock
+        icon: images/sections/skills/cloud.png
+      - name: LLM Orchestration
+        icon: images/sections/skills/python.png
+  - name: Cloud & Infrastructure
+    items:
+      - name: Microsoft Azure
+        icon: images/sections/skills/cloud.png
+      - name: AWS (EKS, S3)
+        icon: images/sections/skills/cloud.png
+      - name: Kubernetes
+        icon: images/sections/skills/cloud.png
+  - name: Infrastructure as Code
+    items:
+      - name: Terraform
+        icon: images/sections/skills/cloud.png
+      - name: AWS CDK / SAM
+        icon: images/sections/skills/cloud.png
+      - name: CloudFormation
         icon: images/sections/skills/cloud.png
   - name: Analysis & Visualization
     items:
@@ -26,13 +52,11 @@ skills:
         icon: images/sections/skills/cloud.png
   - name: Programming & Databases
     items:
-      - name: SQL
-        icon: images/sections/skills/cloud.png
       - name: Python
         icon: images/sections/skills/python.png
+      - name: SQL
+        icon: images/sections/skills/cloud.png
       - name: PySpark
         icon: images/sections/skills/cloud.png
-      - name: Azure SQL
-        icon: images/sections/skills/cloud.png
-      - name: SQL Server
+      - name: SQL Server / Azure SQL
         icon: images/sections/skills/cloud.png
