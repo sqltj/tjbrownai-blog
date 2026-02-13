@@ -6,38 +6,38 @@ section:
   showOnNavbar: true
 
 accomplishments:
-  - title: Databricks Data Engineer Associate
-    issuer: Databricks
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Databricks Data Engineer Associate
+    organization:
+      name: Databricks
+      url: ""
+    certificateURL: ""
 
-  - title: Microsoft Fabric Data Engineer Associate
-    issuer: Microsoft
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Microsoft Fabric Data Engineer Associate
+    organization:
+      name: Microsoft
+      url: ""
+    certificateURL: ""
 
-  - title: Microsoft Fabric Analytics Engineer Associate
-    issuer: Microsoft
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Microsoft Fabric Analytics Engineer Associate
+    organization:
+      name: Microsoft
+      url: ""
+    certificateURL: ""
 
-  - title: Azure Data Engineering Associate
-    issuer: Microsoft
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Azure Data Engineering Associate
+    organization:
+      name: Microsoft
+      url: ""
+    certificateURL: ""
 
-  - title: Azure Enterprise Data Analyst Associate
-    issuer: Microsoft
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Azure Enterprise Data Analyst Associate
+    organization:
+      name: Microsoft
+      url: ""
+    certificateURL: ""
 
-  - title: Azure Fundamentals
-    issuer: Microsoft
-    url: ""
-    certificate: ""
-    icon: images/sections/skills/cloud.png
+  - name: Azure Fundamentals
+    organization:
+      name: Microsoft
+      url: ""
+    certificateURL: ""
