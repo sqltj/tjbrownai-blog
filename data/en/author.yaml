@@ -1,15 +1,15 @@
-name: "TJ Brown"
+name: "Terence Brown, Jr."
 nickname: "TJ"
 greeting: "Hi, I am"
-subtitle: "Software Architect & AI Enthusiast"
-image: "images/author/john.png" # Using placeholder from example
+subtitle: "Data & AI Leader | Software Architect"
+image: "images/author/john.png" # Placeholder
 contactInfo:
-  email: "tj@example.com"
+  email: "tj@tj-brown.com"
   github: sqltj
   linkedin: sqltj
 
 summary:
-  - Software Architect
-  - AI Enthusiast
-  - Data Engineer
-  - Exploring Databricks, Fabric, and AI
+  - Accomplished Data & AI leader with 14+ years experience.
+  - Expert in architecting enterprise-scale data platforms.
+  - Proven track record in scaling high-performing teams.
+  - Strategic leader for Fortune 500 organizations.

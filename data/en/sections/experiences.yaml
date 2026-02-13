@@ -1,0 +1,60 @@
+section:
+  name: Experience
+  id: experiences
+  enable: true
+  weight: 2
+  showOnNavbar: true
+
+experiences:
+  - company:
+      name: Trility Consulting
+      url: "https://trility.io/"
+      location: Remote
+    positions:
+      - designation: Engineering Manager & Sr. Cloud Data & AI Consultant
+        start: May 2025
+        end: Present
+        responsibilities:
+          - Led a high-performing team of Data & AI consultants and architects.
+          - Served as technical subject matter expert in presales conversations.
+          - Architected Greenfield Microsoft Fabric implementations for a national homebuilder.
+          - Engineered proprietary solution accelerators and reusable frameworks.
+
+  - company:
+      name: Microsoft
+      url: "https://www.microsoft.com/"
+      location: Remote
+    positions:
+      - designation: Sr. Technical Specialist
+        start: Nov 2024
+        end: Mar 2025
+        responsibilities:
+          - Collaborated with Account Executives to drive Data & AI strategy using Azure Data Platform.
+          - Enabled manufacturers with Microsoft Fabric, Databricks, and Azure AI.
+          - Engaged with Director and C-level technical leaders on AI strategy.
+      - designation: Sr. Data & AI Consultant
+        start: Mar 2020
+        end: Nov 2024
+        responsibilities:
+          - Led multimillion dollar data estate modernization projects.
+          - Increased scalability by over 400% and reduced report development time by 50%.
+          - Served as a trusted data strategy advisor to seven Fortune 500 companies.
+      - designation: Data & AI Consultant
+        start: Apr 2017
+        end: Mar 2020
+        responsibilities:
+          - Led teams of consultants to create successful modern data analytics products.
+          - Enhanced project success by strategically aligning team members' skills.
+
+  - company:
+      name: Pragmatic Works Consulting
+      url: "https://pragmaticworks.com/"
+      location: Remote
+    positions:
+      - designation: Sr. Business Intelligence Consultant
+        start: Nov 2011
+        end: Apr 2017
+        responsibilities:
+          - Specializing in BI, data engineering, and data warehousing.
+          - Achieved an over 80% sales conversion rate in pre-sales demonstrations.
+          - Served as a professional trainer for Power BI, SSAS, and SSRS.

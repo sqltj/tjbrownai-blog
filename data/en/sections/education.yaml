@@ -1,0 +1,17 @@
+section:
+  name: Education
+  id: education
+  enable: true
+  weight: 3
+  showOnNavbar: true
+
+degrees:
+  - name: Bachelor of Science
+    institution:
+      name: University of Florida
+      url: "https://www.ufl.edu/"
+    major: Decision and Information Science
+    taken:
+      start: ""
+      end: ""
+    icon: images/sections/education/university.jpg
