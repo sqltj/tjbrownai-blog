@@ -42,7 +42,7 @@ params:
   # Default branch of your Git repo
   gitBranch: main
 
-  background: "images/site/background2.png" # Path to your homepage background image
+  background: "images/site/background.jpg" # Path to your homepage background image
 
   # Configure various features of this theme
   features:
