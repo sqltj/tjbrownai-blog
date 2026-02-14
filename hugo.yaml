@@ -42,6 +42,8 @@ params:
   # Default branch of your Git repo
   gitBranch: main
 
+  background: "images/site/background2.png" # Path to your homepage background image
+
   # Configure various features of this theme
   features:
     theme:
@@ -50,8 +52,6 @@ params:
         light: true
         dark: true
         default: dark # Prefer dark mode for high-tech look
-
-  background: "images/site/background2.png"
 
     # Enable and configure blog posts
     blog:
