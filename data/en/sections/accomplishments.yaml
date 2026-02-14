@@ -7,37 +7,43 @@ section:
 
 accomplishments:
   - name: Databricks Data Engineer Associate
+    logo: images/sections/accomplishments/databricks.jpeg
     organization:
       name: Databricks
-      url: ""
+      url: "https://www.databricks.com/"
     certificateURL: ""
 
   - name: Microsoft Fabric Data Engineer Associate
+    logo: images/sections/accomplishments/microsoft-fabric.svg
     organization:
       name: Microsoft
-      url: ""
+      url: "https://www.microsoft.com/"
     certificateURL: ""
 
   - name: Microsoft Fabric Analytics Engineer Associate
+    logo: images/sections/accomplishments/microsoft-fabric.svg
     organization:
       name: Microsoft
-      url: ""
+      url: "https://www.microsoft.com/"
     certificateURL: ""
 
   - name: Azure Data Engineering Associate
+    logo: images/sections/accomplishments/microsoft-fabric.svg
     organization:
       name: Microsoft
-      url: ""
+      url: "https://www.microsoft.com/"
     certificateURL: ""
 
   - name: Azure Enterprise Data Analyst Associate
+    logo: images/sections/accomplishments/microsoft-fabric.svg
     organization:
       name: Microsoft
-      url: ""
+      url: "https://www.microsoft.com/"
     certificateURL: ""
 
   - name: Azure Fundamentals
+    logo: images/sections/accomplishments/microsoft-fabric.svg
     organization:
       name: Microsoft
-      url: ""
+      url: "https://www.microsoft.com/"
     certificateURL: ""
