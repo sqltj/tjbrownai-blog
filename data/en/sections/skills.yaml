@@ -58,7 +58,7 @@ skills:
     categories: ["programming"]
   
   - name: Python
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/python.png
     summary: ""
     categories: ["programming"]
   
