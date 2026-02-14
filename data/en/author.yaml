@@ -2,7 +2,7 @@ name: "Terence Brown, Jr."
 nickname: "TJ"
 greeting: "Hi, I am"
 subtitle: "Data & AI Leader | Engineering Manager"
-image: "images/author/john.png" # Placeholder
+image: "images/author/tj-logo.png"
 contactInfo:
   email: "tj@tj-brown.com"
   github: sqltj
