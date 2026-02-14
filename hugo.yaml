@@ -51,6 +51,8 @@ params:
         dark: true
         default: dark # Prefer dark mode for high-tech look
 
+  background: "images/site/background2.png"
+
     # Enable and configure blog posts
     blog:
       enable: true
