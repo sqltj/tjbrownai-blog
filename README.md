@@ -1,6 +1,6 @@
 # TJ Brown | Tech Blog
 
-This is a personal tech blog built with [Hugo](https://gohugo.io/) and the [Blowfish](https://blowfish.page/) theme. It features a professional, high-tech design focused on AI and software engineering.
+This is a personal tech blog built with [Hugo](https://gohugo.io/) and the [Toha](https://github.com/hugo-themes/toha) theme. It features a professional, high-tech design focused on AI and software engineering.
 
 ## 🚀 Getting Started
 
@@ -92,4 +92,4 @@ The output will be in the `public/` directory.
 
 ## 🎨 Theme Details
 
-This site uses the **Blowfish** theme. For advanced features like KaTeX math, Mermaid diagrams, or Chart.js, refer to the [Blowfish Documentation](https://blowfish.page/docs/).
+This site uses the **Toha** theme. For advanced features, refer to the [Toha Documentation](https://toha-docs.netlify.app/posts/).
