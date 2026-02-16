@@ -11,6 +11,8 @@ buttons:
     filter: "all"
   - name: Data Platforms
     filter: "platforms"
+  - name: Cloud
+    filter: "cloud"
   - name: Analysis & Visualization
     filter: "analysis"
   - name: Programming & Databases
@@ -40,7 +42,7 @@ skills:
   - name: Azure
     logo: images/sections/skills/cloud.png
     summary: ""
-    categories: ["platforms"]
+    categories: ["cloud"]
 
   - name: Power BI
     logo: images/sections/skills/power_bi.svg
@@ -49,6 +51,11 @@ skills:
   
   - name: Data Modeling
     logo: images/sections/skills/cloud.png
+    summary: ""
+    categories: ["analysis"]
+  
+  - name: Tableau
+    logo: images/sections/skills/tableau.svg
     summary: ""
     categories: ["analysis"]
 
@@ -64,6 +71,11 @@ skills:
   
   - name: PySpark
     logo: images/sections/skills/apache-spark-logo.png
+    summary: ""
+    categories: ["programming"]
+  
+  - name: C#
+    logo: images/sections/skills/csharp.svg
     summary: ""
     categories: ["programming"]
   
