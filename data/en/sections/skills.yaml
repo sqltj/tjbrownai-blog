@@ -40,7 +40,7 @@ skills:
     categories: ["platforms"]
   
   - name: Azure
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/azure.svg
     summary: ""
     categories: ["cloud"]
 
