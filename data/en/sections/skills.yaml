@@ -18,22 +18,22 @@ buttons:
 
 skills:
   - name: Microsoft Fabric
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/fabric.svg
     summary: ""
     categories: ["platforms"]
   
   - name: Databricks
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/databricks.jpeg
     summary: ""
     categories: ["platforms"]
   
   - name: Azure Synapse
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/synapse.svg
     summary: ""
     categories: ["platforms"]
   
   - name: Azure Data Factory
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/data_factory.svg
     summary: ""
     categories: ["platforms"]
   
@@ -43,7 +43,7 @@ skills:
     categories: ["platforms"]
 
   - name: Power BI
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/power_bi.svg
     summary: ""
     categories: ["analysis"]
   
@@ -53,26 +53,26 @@ skills:
     categories: ["analysis"]
 
   - name: SQL
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/sql_database.svg
     summary: ""
     categories: ["programming"]
   
   - name: Python
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/python-logo-only.svg
     summary: ""
     categories: ["programming"]
   
   - name: PySpark
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/apache-spark-logo.png
     summary: ""
     categories: ["programming"]
   
   - name: Azure SQL
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/sql_database.svg
     summary: ""
     categories: ["programming"]
   
   - name: SQL Server
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/sql_database.svg
     summary: ""
     categories: ["programming"]
