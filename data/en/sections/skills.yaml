@@ -40,7 +40,7 @@ skills:
     categories: ["platforms"]
   
   - name: Azure
-    logo: images/sections/skills/azure.svg
+    logo: images/sections/skills/Microsoft_Azure.svg
     summary: ""
     categories: ["cloud"]
 
@@ -55,7 +55,7 @@ skills:
     categories: ["analysis"]
   
   - name: Tableau
-    logo: images/sections/skills/tableau.svg
+    logo: images/sections/skills/tableau-icon-logo.svg
     summary: ""
     categories: ["analysis"]
 
