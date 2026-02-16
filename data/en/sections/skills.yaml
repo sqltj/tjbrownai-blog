@@ -63,7 +63,7 @@ skills:
     categories: ["programming"]
   
   - name: PySpark
-    logo: images/sections/skills/cloud.png
+    logo: images/sections/skills/apache-spark-logo.png
     summary: ""
     categories: ["programming"]
   
