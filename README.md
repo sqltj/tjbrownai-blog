@@ -1,5 +1,7 @@
 # TJ Brown | Tech Blog
 
+[**Visit the Website**](https://tjbrown.ai)
+
 This is a personal tech blog built with [Hugo](https://gohugo.io/) and the [Toha](https://github.com/hugo-themes/toha) theme. It features a professional, high-tech design focused on AI and software engineering.
 
 ## 🚀 Getting Started
