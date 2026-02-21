@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Mapping: Power BI to Databricks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto Mono', sans-serif;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            margin-bottom: 12px;
+        }
+
+        .concept-row {
+            display: grid;
+            grid-template-columns: 0.9fr 1fr 1fr;
+            gap: 0;
+            min-height: 0;
+        }
+
+        .concept-header {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 58, 138, 0.4));
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 10px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #cbd5e1;
+        }
+
+        .concept-cell {
+            background: rgba(30, 41, 59, 0.6);
+            border-right: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 10px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            animation: fadeIn 0.5s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .concept-cell:last-child {
+            border-right: none;
+        }
+
+        .concept-row:last-child .concept-cell {
+            border-bottom: none;
+        }
+
+        .concept-cell:hover {
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .concept-row:nth-child(2) .concept-cell { animation-delay: 0.05s; }
+        .concept-row:nth-child(3) .concept-cell { animation-delay: 0.1s; }
+        .concept-row:nth-child(4) .concept-cell { animation-delay: 0.15s; }
+        .concept-row:nth-child(5) .concept-cell { animation-delay: 0.2s; }
+        .concept-row:nth-child(6) .concept-cell { animation-delay: 0.25s; }
+
+        .cell-label {
+            font-weight: 600;
+            color: #cbd5e1;
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+
+        .cell-value {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.3;
+        }
+
+        .concept-cell.powerbi .cell-value {
+            color: #ffb86b;
+        }
+
+        .concept-cell.databricks .cell-value {
+            color: #63f2ca;
+        }
+
+        .concept-cell.diff .cell-value {
+            color: #7dd3fc;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .concept-cell code {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .why-matters {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.3));
+            border: 1px solid rgba(99, 140, 236, 0.4);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        .why-title {
+            font-weight: 600;
+            color: #63b3f2;
+            margin-bottom: 8px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .why-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .why-item {
+            font-size: 11px;
+            line-height: 1.2;
+            color: #cbd5e1;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .why-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #63b3f2;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .concept-row {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-cell {
+                border-right: none;
+            }
+
+            .concept-header {
+                font-size: 11px;
+            }
+
+            .cell-value {
+                font-size: 12px;
+            }
+
+            .why-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Everything You Know, Translated</div>
+
+        <div class="concept-grid">
+            <!-- Header Row -->
+            <div class="concept-row">
+                <div class="concept-header"><span class="icon">📘</span>Power BI Concept</div>
+                <div class="concept-header"><span class="icon">📗</span>Databricks Equivalent</div>
+                <div class="concept-header"><span class="icon">✨</span>Key Difference</div>
+            </div>
+
+            <!-- Row 1: Semantic Model -->
+            <div class="concept-row">
+                <div class="concept-cell powerbi">
+                    <div class="cell-value"><strong>Semantic Model</strong></div>
+                </div>
+                <div class="concept-cell databricks">
+                    <div class="cell-value"><strong>Metric View</strong></div>
+                </div>
+                <div class="concept-cell diff">
+                    <div class="cell-value">Lives in lakehouse, not PBIX</div>
+                </div>
+            </div>
+
+            <!-- Row 2: DAX Calculated Measure -->
+            <div class="concept-row">
+                <div class="concept-cell powerbi">
+                    <div class="cell-value"><strong>DAX Calculated<br>Measure</strong></div>
+                </div>
+                <div class="concept-cell databricks">
+                    <div class="cell-value"><strong>Measure Expression</strong></div>
+                </div>
+                <div class="concept-cell diff">
+                    <div class="cell-value">Defined with <code>SQL</code> syntax, not DAX</div>
+                </div>
+            </div>
+
+            <!-- Row 3: DAX Calculated Column -->
+            <div class="concept-row">
+                <div class="concept-cell powerbi">
+                    <div class="cell-value"><strong>DAX Calculated<br>Column</strong></div>
+                </div>
+                <div class="concept-cell databricks">
+                    <div class="cell-value"><strong>Dimension Expression</strong></div>
+                </div>
+                <div class="concept-cell diff">
+                    <div class="cell-value">Defined per expression, not per table</div>
+                </div>
+            </div>
+
+            <!-- Row 4: Dimension Table -->
+            <div class="concept-row">
+                <div class="concept-cell powerbi">
+                    <div class="cell-value"><strong>Dimension Table</strong></div>
+                </div>
+                <div class="concept-cell databricks">
+                    <div class="cell-value"><strong>Dimensions (in YAML)</strong></div>
+                </div>
+                <div class="concept-cell diff">
+                    <div class="cell-value">Semantic definition, not physical table</div>
+                </div>
+            </div>
+
+            <!-- Row 5: Row-Level Security -->
+            <div class="concept-row">
+                <div class="concept-cell powerbi">
+                    <div class="cell-value"><strong>Row-Level<br>Security</strong></div>
+                </div>
+                <div class="concept-cell databricks">
+                    <div class="cell-value"><strong>Unity Catalog RLS</strong></div>
+                </div>
+                <div class="concept-cell diff">
+                    <div class="cell-value">Governance + filtering, not token-based</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-matters">
+            <div class="why-title">Why This Matters to You</div>
+            <div class="why-list">
+                <div class="why-item">No procedural DAX — declarative YAML instead</div>
+                <div class="why-item">Metrics are automatically discoverable by Genie</div>
+                <div class="why-item">Dimensions and measures are logically separated</div>
+                <div class="why-item">Reusability is enforced through child views</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

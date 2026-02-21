@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakehouse Architecture Layers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto Mono', sans-serif;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .lakehouse-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 12px;
+        }
+
+        .layer {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            animation: fadeInRight 0.6s ease-out backwards;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layer::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: currentColor;
+        }
+
+        .layer:first-child {
+            border-radius: 8px 8px 0 0;
+            border-bottom: none;
+        }
+
+        .layer:last-child {
+            border-radius: 0 0 8px 8px;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .layer:not(:last-child) {
+            border-bottom: none;
+        }
+
+        .layer:not(:first-child) {
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .layer.bronze {
+            background: rgba(143, 89, 2, 0.08);
+            border-left-color: rgba(217, 119, 6, 0.5);
+            color: #d97706;
+        }
+
+        .layer.bronze:hover {
+            background: rgba(143, 89, 2, 0.15);
+            border-color: rgba(217, 119, 6, 0.6);
+            transform: translateX(4px);
+        }
+
+        .layer.silver {
+            background: rgba(71, 85, 105, 0.08);
+            border-left-color: rgba(148, 163, 184, 0.5);
+            color: #cbd5e1;
+        }
+
+        .layer.silver:hover {
+            background: rgba(71, 85, 105, 0.15);
+            border-color: rgba(148, 163, 184, 0.7);
+            transform: translateX(4px);
+        }
+
+        .layer.gold {
+            background: rgba(217, 119, 6, 0.08);
+            border-left-color: rgba(245, 158, 11, 0.5);
+            color: #f59e0b;
+        }
+
+        .layer.gold:hover {
+            background: rgba(217, 119, 6, 0.15);
+            border-color: rgba(245, 158, 11, 0.6);
+            transform: translateX(4px);
+        }
+
+        .layer.semantic {
+            background: rgba(99, 242, 202, 0.08);
+            border-left-color: rgba(99, 242, 202, 0.6);
+            color: #63f2ca;
+        }
+
+        .layer.semantic:hover {
+            background: rgba(99, 242, 202, 0.15);
+            border-color: rgba(99, 242, 202, 0.8);
+            transform: translateX(4px);
+        }
+
+        .layer:nth-child(1) { animation-delay: 0.05s; }
+        .layer:nth-child(2) { animation-delay: 0.15s; }
+        .layer:nth-child(3) { animation-delay: 0.25s; }
+        .layer:nth-child(4) { animation-delay: 0.35s; }
+        .layer:nth-child(5) { animation-delay: 0.45s; }
+
+        .layer-icon {
+            font-size: 24px;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .layer-content {
+            flex: 1;
+        }
+
+        .layer-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+            opacity: 0.8;
+        }
+
+        .layer-description {
+            font-size: 12px;
+            line-height: 1.2;
+            opacity: 0.85;
+        }
+
+        .layer-tables {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .table-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid currentColor;
+            border-opacity: 0.2;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-size: 10px;
+            color: inherit;
+            font-weight: 500;
+        }
+
+        .semantic .layer-tables {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .consumers {
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(63, 131, 248, 0.08);
+            border: 1px solid rgba(63, 131, 248, 0.3);
+            border-radius: 8px;
+            animation: fadeInUp 0.6s ease-out 0.55s backwards;
+        }
+
+        .consumers-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #3f83f8;
+            margin-bottom: 6px;
+        }
+
+        .consumers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .consumer {
+            background: rgba(63, 131, 248, 0.1);
+            border: 1px solid rgba(63, 131, 248, 0.4);
+            border-radius: 4px;
+            padding: 6px;
+            text-align: center;
+            font-size: 11px;
+            color: #7dd3fc;
+            transition: all 0.3s ease;
+        }
+
+        .consumer:hover {
+            background: rgba(63, 131, 248, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .insight {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.3));
+            border: 1px solid rgba(99, 140, 236, 0.4);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .insight-text {
+            color: #cbd5e1;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lakehouse-stack {
+                gap: 2px;
+            }
+
+            .layer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .consumers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Lakehouse Architecture: Metric Views in Context</div>
+
+        <div class="lakehouse-stack">
+            <div class="layer bronze">
+                <div class="layer-icon">🛢️</div>
+                <div class="layer-content">
+                    <div class="layer-label">Bronze Layer</div>
+                    <div class="layer-description">Raw data ingestion</div>
+                    <div class="layer-tables">
+                        <span class="table-tag">raw_orders</span>
+                        <span class="table-tag">raw_customers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer silver">
+                <div class="layer-icon">🔧</div>
+                <div class="layer-content">
+                    <div class="layer-label">Silver Layer</div>
+                    <div class="layer-description">Cleaned, conformed, deduplicated data</div>
+                    <div class="layer-tables">
+                        <span class="table-tag">stg_orders</span>
+                        <span class="table-tag">stg_customers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer gold">
+                <div class="layer-icon">⭐</div>
+                <div class="layer-content">
+                    <div class="layer-label">Gold Layer</div>
+                    <div class="layer-description">Star schema optimized for analytics</div>
+                    <div class="layer-tables">
+                        <span class="table-tag">fact_sales</span>
+                        <span class="table-tag">dim_customer</span>
+                        <span class="table-tag">dim_product</span>
+                        <span class="table-tag">dim_date</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer semantic">
+                <div class="layer-icon">📊</div>
+                <div class="layer-content">
+                    <div class="layer-label">Semantic Layer</div>
+                    <div class="layer-description">Metric Views: Governed, Governed, Versioned, Accessible</div>
+                    <div class="layer-tables">
+                        <span class="table-tag">mv_sales_metrics</span>
+                        <span class="table-tag">mv_sales_finance</span>
+                        <span class="table-tag">mv_sales_marketing</span>
+                        <span class="table-tag">... child views ...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="consumers">
+            <div class="consumers-label">📌 Consumed By</div>
+            <div class="consumers-grid">
+                <div class="consumer">AI/BI Dashboards</div>
+                <div class="consumer">Genie (NL Queries)</div>
+                <div class="consumer">SQL Analysts</div>
+                <div class="consumer">Downstream Tools</div>
+            </div>
+        </div>
+
+        <div class="insight">
+            <div class="insight-text">
+                <strong>Key insight:</strong> Metric Views sit between your Gold schema and consumers, enforcing semantics without blocking access. They're the single source of truth for metrics—governed, versioned, and accessible everywhere.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

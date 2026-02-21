@@ -23,29 +23,20 @@ In this series, I'll walk to through Metric Views conceptually so you can unders
 
 ## The Core Analogy: From PBIX to Lakehouse
 
-### Power BI Mental Model
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('iframe[scrolling="no"]').forEach(function (iframe) {
+        iframe.addEventListener('load', function () {
+            try {
+                var h = iframe.contentDocument.documentElement.scrollHeight;
+                if (h > 0) iframe.style.height = (h + 8) + 'px';
+            } catch (e) {}
+        });
+    });
+});
+</script>
 
-```
-(Gold) Data → Connections → PBIX Semantic Model (DAX) → Power BI Dashboards
-           ↓
-           Only accessible inside Power BI Desktop/Fabric
-           One file per semantic model
-           Version control is messy
-           Security can be nexted between source systems and the semantic model
-```
-
-### Databricks Mental Model
-
-```
-(Gold) Data → Metric Views (YAML) → Dashboards / Genie / Any Tool
-                                              ↓
-                                              Governed in Unity Catalog
-                                              Versioned like code
-                                              One source of truth
-                                              Accessible everywhere
-```
-
-**The key difference:** Your semantic layer isn't a proprietary artifact—it's a governed database object.
+<iframe src="/diagrams/01-powerbi-vs-databricks-flow.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ---
 
@@ -58,6 +49,8 @@ In this series, I'll walk to through Metric Views conceptually so you can unders
 | **DAX Calculated Column** | **Dimension Expression** | Measure expression defined with SQL syntax |
 | **Dimension Table** | **Dimensions (in YAML)** | Defined per expression instead of per table
 | **Row-Level Security** | **Unity Catalog RLS** | Governance + filtering, not token-based |
+
+<iframe src="/diagrams/03-concept-mapping.html" width="100%" height="500" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ### Why This Matters to You
 
@@ -152,6 +145,8 @@ Lakehouse (Delta Lake)
 ```
 
 **Key insight:** Metric Views sit *between* your Gold schema and consumers. They enforce semantics without blocking access.
+
+<iframe src="/diagrams/02-lakehouse-architecture.html" width="100%" height="580" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ---
 
