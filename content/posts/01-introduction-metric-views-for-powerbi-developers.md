@@ -52,13 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <iframe src="/diagrams/03-concept-mapping.html" width="100%" height="500" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
-### Why This Matters to You
-
-1. **No procedural DAX** — You write declarative YAML instead. Less "how" logic, more "what" definitions.
-2. **Metrics are discoverable** — Genie (Databricks' AI/BI tool) automatically surfaces your metrics for natural-language queries.
-3. **Separation of concerns** — Dimension definitions and measure definitions are separate, not tangled in DAX logic.
-4. **Reusability is enforced** — Child views can layer metrics without redefining KPIs (hard to do in Power BI).
-
 ---
 
 ## Why Move to Metric Views?
