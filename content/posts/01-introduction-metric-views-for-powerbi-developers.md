@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Metric Views for Power BI Developers"
 date: 2026-02-18
-draft: true
+draft: false
 categories: ["Databricks", "Semantic Modeling"]
 tags: ["metric-views", "power-bi", "databricks", "semantic-layer"]
 ---
