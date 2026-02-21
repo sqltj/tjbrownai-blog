@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080e1f"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0c1628"/>
+    </linearGradient>
+
+    <!-- Cube face fills -->
+    <linearGradient id="face-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#63f2ca" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3f83f8" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="face-right" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f83f8" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="face-left" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#63f2ca" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#080e1f" stop-opacity="0.90"/>
+    </linearGradient>
+
+    <!-- Radial glow behind cube -->
+    <radialGradient id="cube-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#63f2ca" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#3f83f8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Axis node fills -->
+    <radialGradient id="node-teal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#63f2ca"/>
+      <stop offset="100%" stop-color="#63f2ca" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="node-orange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb86b"/>
+      <stop offset="100%" stop-color="#ffb86b" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="node-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Glow filter for edges -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="glow-node" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#94a3b8" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+
+    <!-- Subtle isometric grid overlay -->
+    <pattern id="iso-grid" width="60" height="34.64" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <line x1="0" y1="0" x2="60" y2="34.64" stroke="#63f2ca" stroke-opacity="0.025" stroke-width="1"/>
+      <line x1="60" y1="0" x2="0" y2="34.64" stroke="#63f2ca" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+
+    <!-- Vertical divider gradient -->
+    <linearGradient id="divider-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#63f2ca" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#63f2ca" stop-opacity="0.2"/>
+      <stop offset="70%" stop-color="#3f83f8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3f83f8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Title underline gradient -->
+    <linearGradient id="accent-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#63f2ca"/>
+      <stop offset="100%" stop-color="#3f83f8" stop-opacity="0.4"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ─── BACKGROUND ─── -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="680" height="630" fill="url(#iso-grid)"/>
+
+  <!-- Ambient glow blobs -->
+  <ellipse cx="380" cy="310" rx="280" ry="220" fill="url(#cube-glow)"/>
+  <ellipse cx="380" cy="310" rx="160" ry="120" fill="url(#cube-glow)"/>
+
+  <!-- Right-side panel tint -->
+  <rect x="680" width="520" height="630" fill="#0a1020" fill-opacity="0.4"/>
+
+  <!-- ─── SCATTERED BACKGROUND DOTS ─── -->
+  <circle cx="110" cy="90"  r="2" fill="#63f2ca" fill-opacity="0.20"/>
+  <circle cx="200" cy="520" r="1.5" fill="#3f83f8" fill-opacity="0.25"/>
+  <circle cx="580" cy="60"  r="2" fill="#ffb86b" fill-opacity="0.18"/>
+  <circle cx="620" cy="580" r="1.5" fill="#63f2ca" fill-opacity="0.20"/>
+  <circle cx="130" cy="420" r="1.5" fill="#7dd3fc" fill-opacity="0.20"/>
+  <circle cx="540" cy="500" r="2" fill="#ffb86b" fill-opacity="0.15"/>
+  <circle cx="80"  cy="280" r="1" fill="#63f2ca" fill-opacity="0.18"/>
+  <circle cx="650" cy="150" r="1.5" fill="#3f83f8" fill-opacity="0.18"/>
+
+  <!-- ─── ISOMETRIC CUBE ─── -->
+  <!--
+    Center: (380, 315)  Side: 160px
+    cos30 ≈ 0.866  →  160 * 0.866 = 138.6 ≈ 139
+    sin30 = 0.5    →  160 * 0.5   = 80
+
+    A  (top)        = (380,  155)
+    B  (top-right)  = (519,  235)
+    C  (right)      = (519,  395)
+    D  (bottom)     = (380,  475)
+    E  (left)       = (241,  395)
+    F  (top-left)   = (241,  235)
+    G  (center)     = (380,  315)
+  -->
+
+  <!-- Face fills -->
+  <!-- Top face: A B G F -->
+  <polygon points="380,155 519,235 380,315 241,235" fill="url(#face-top)"/>
+  <!-- Right face: B C D G -->
+  <polygon points="519,235 519,395 380,475 380,315" fill="url(#face-right)"/>
+  <!-- Left face: F G D E -->
+  <polygon points="241,235 380,315 380,475 241,395" fill="url(#face-left)"/>
+
+  <!-- Face edge outlines (faint base) -->
+  <polygon points="380,155 519,235 380,315 241,235" fill="none" stroke="#63f2ca" stroke-width="1" stroke-opacity="0.3"/>
+  <polygon points="519,235 519,395 380,475 380,315" fill="none" stroke="#63f2ca" stroke-width="1" stroke-opacity="0.2"/>
+  <polygon points="241,235 380,315 380,475 241,395" fill="none" stroke="#63f2ca" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Inner structure lines (hidden edges, dashed) -->
+  <line x1="380" y1="315" x2="380" y2="475" stroke="#63f2ca" stroke-width="0.8" stroke-opacity="0.18" stroke-dasharray="4,4"/>
+  <line x1="380" y1="315" x2="241" y2="235" stroke="#63f2ca" stroke-width="0.8" stroke-opacity="0.18" stroke-dasharray="4,4"/>
+  <line x1="380" y1="315" x2="519" y2="235" stroke="#63f2ca" stroke-width="0.8" stroke-opacity="0.18" stroke-dasharray="4,4"/>
+
+  <!-- Glowing edges (top face only — most visible) -->
+  <!-- A–B glow -->
+  <line x1="380" y1="155" x2="519" y2="235" stroke="#63f2ca" stroke-width="5" stroke-opacity="0.08" filter="url(#glow-soft)"/>
+  <line x1="380" y1="155" x2="519" y2="235" stroke="#63f2ca" stroke-width="2" stroke-opacity="0.9" filter="url(#glow)"/>
+  <!-- A–F glow -->
+  <line x1="380" y1="155" x2="241" y2="235" stroke="#63f2ca" stroke-width="5" stroke-opacity="0.08" filter="url(#glow-soft)"/>
+  <line x1="380" y1="155" x2="241" y2="235" stroke="#63f2ca" stroke-width="2" stroke-opacity="0.9" filter="url(#glow)"/>
+  <!-- B–C -->
+  <line x1="519" y1="235" x2="519" y2="395" stroke="#3f83f8" stroke-width="2" stroke-opacity="0.6" filter="url(#glow)"/>
+  <!-- E–D -->
+  <line x1="241" y1="395" x2="380" y2="475" stroke="#3f83f8" stroke-width="1.5" stroke-opacity="0.45"/>
+  <!-- C–D -->
+  <line x1="519" y1="395" x2="380" y2="475" stroke="#3f83f8" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- F–E -->
+  <line x1="241" y1="235" x2="241" y2="395" stroke="#63f2ca" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- Top vertex glow dot -->
+  <circle cx="380" cy="155" r="16" fill="#63f2ca" fill-opacity="0.06" filter="url(#glow-soft)"/>
+  <circle cx="380" cy="155" r="4"  fill="#63f2ca" fill-opacity="0.9" filter="url(#glow)"/>
+
+  <!-- ─── DIMENSION AXES ─── -->
+
+  <!-- Z-axis: up from A (measures) -->
+  <line x1="380" y1="155" x2="380" y2="62" stroke="#63f2ca" stroke-width="1.5" stroke-opacity="0.45" stroke-dasharray="7,5"/>
+  <circle cx="380" cy="115" r="3.5" fill="#63f2ca" fill-opacity="0.55"/>
+  <!-- Terminal node Z -->
+  <circle cx="380" cy="67" r="18" fill="#63f2ca" fill-opacity="0.06" filter="url(#glow-soft)"/>
+  <circle cx="380" cy="67" r="7"  fill="url(#node-teal)" filter="url(#glow-node)"/>
+  <circle cx="380" cy="67" r="3"  fill="#e0fff8"/>
+  <text x="380" y="46" text-anchor="middle" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" font-weight="700" fill="#63f2ca" fill-opacity="0.65" letter-spacing="0.12em">MEASURES</text>
+
+  <!-- X-axis: upper-right from B (time/date) -->
+  <line x1="519" y1="235" x2="635" y2="167" stroke="#ffb86b" stroke-width="1.5" stroke-opacity="0.45" stroke-dasharray="7,5"/>
+  <circle cx="580" cy="199" r="3"  fill="#ffb86b" fill-opacity="0.55"/>
+  <!-- Terminal node X -->
+  <circle cx="641" cy="163" r="16" fill="#ffb86b" fill-opacity="0.06" filter="url(#glow-soft)"/>
+  <circle cx="641" cy="163" r="7"  fill="url(#node-orange)" filter="url(#glow-node)"/>
+  <circle cx="641" cy="163" r="3"  fill="#fff5e6"/>
+  <text x="662" y="158" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" font-weight="700" fill="#ffb86b" fill-opacity="0.65" letter-spacing="0.10em">TIME</text>
+
+  <!-- Y-axis: upper-left from F (geography/product) -->
+  <line x1="241" y1="235" x2="125" y2="167" stroke="#7dd3fc" stroke-width="1.5" stroke-opacity="0.45" stroke-dasharray="7,5"/>
+  <circle cx="180" cy="199" r="3"  fill="#7dd3fc" fill-opacity="0.55"/>
+  <!-- Terminal node Y -->
+  <circle cx="119" cy="163" r="16" fill="#7dd3fc" fill-opacity="0.06" filter="url(#glow-soft)"/>
+  <circle cx="119" cy="163" r="7"  fill="url(#node-blue)" filter="url(#glow-node)"/>
+  <circle cx="119" cy="163" r="3"  fill="#e6f6ff"/>
+  <text x="98" y="158" text-anchor="end" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" font-weight="700" fill="#7dd3fc" fill-opacity="0.65" letter-spacing="0.10em">PRODUCT</text>
+
+  <!-- Lower axes (faint) -->
+  <line x1="519" y1="395" x2="620" y2="455" stroke="#ffb86b" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="5,6"/>
+  <line x1="241" y1="395" x2="140" y2="455" stroke="#7dd3fc" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="5,6"/>
+  <line x1="380" y1="475" x2="380" y2="558" stroke="#63f2ca" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="5,6"/>
+
+  <!-- Small terminal dots lower -->
+  <circle cx="624" cy="457" r="4" fill="#ffb86b" fill-opacity="0.35"/>
+  <circle cx="136" cy="457" r="4" fill="#7dd3fc" fill-opacity="0.35"/>
+  <circle cx="380" cy="560" r="4" fill="#63f2ca" fill-opacity="0.35"/>
+
+  <!-- ─── FLOATING SATELLITE NODES ─── -->
+  <!-- These suggest data points in the semantic space -->
+  <circle cx="160" cy="310" r="3"  fill="#63f2ca" fill-opacity="0.40"/>
+  <circle cx="148" cy="308" r="8"  fill="#63f2ca" fill-opacity="0.06"/>
+  <line x1="160" y1="310" x2="241" y2="315" stroke="#63f2ca" stroke-width="0.8" stroke-opacity="0.20"/>
+
+  <circle cx="585" cy="300" r="3"  fill="#ffb86b" fill-opacity="0.40"/>
+  <circle cx="585" cy="300" r="8"  fill="#ffb86b" fill-opacity="0.06"/>
+  <line x1="585" y1="300" x2="519" y2="315" stroke="#ffb86b" stroke-width="0.8" stroke-opacity="0.20"/>
+
+  <circle cx="320" cy="115" r="2.5" fill="#7dd3fc" fill-opacity="0.35"/>
+  <circle cx="450" cy="100" r="2"   fill="#63f2ca" fill-opacity="0.30"/>
+  <circle cx="310" cy="490" r="2.5" fill="#3f83f8" fill-opacity="0.30"/>
+  <circle cx="460" cy="505" r="2"   fill="#ffb86b" fill-opacity="0.25"/>
+
+  <!-- ─── VERTICAL DIVIDER ─── -->
+  <line x1="700" y1="0" x2="700" y2="630" stroke="url(#divider-grad)" stroke-width="1"/>
+
+  <!-- ─── TEXT SIDE ─── -->
+
+  <!-- Series badge -->
+  <rect x="744" y="140" width="218" height="30" rx="15"
+        fill="#63f2ca" fill-opacity="0.08"
+        stroke="#63f2ca" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="763" cy="155" r="4" fill="#63f2ca"/>
+  <text x="774" y="160" font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="11" font-weight="700" fill="#63f2ca" fill-opacity="0.85"
+        letter-spacing="0.10em">SERIES · PART 01</text>
+
+  <!-- Main title line 1 -->
+  <text x="744" y="230" font-family="Georgia, 'Times New Roman', serif"
+        font-size="62" font-weight="700" fill="#f1f5f9"
+        letter-spacing="-0.02em">Metric</text>
+
+  <!-- Main title line 2 -->
+  <text x="744" y="302" font-family="Georgia, 'Times New Roman', serif"
+        font-size="62" font-weight="700" fill="#63f2ca"
+        letter-spacing="-0.02em">Views</text>
+
+  <!-- Accent underline -->
+  <rect x="744" y="314" width="320" height="3" rx="2" fill="url(#accent-line)"/>
+
+  <!-- Subtitle -->
+  <text x="744" y="358" font-family="Georgia, 'Times New Roman', serif"
+        font-size="22" fill="#94a3b8" font-style="italic">for Power BI Developers</text>
+
+  <!-- Description line -->
+  <text x="744" y="400" font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="13" fill="#64748b" letter-spacing="0.04em">Databricks · Semantic Layer · YAML</text>
+
+  <!-- Tag pills -->
+  <rect x="744" y="432" width="114" height="26" rx="5"
+        fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="801" y="449" text-anchor="middle"
+        font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.06em">DATABRICKS</text>
+
+  <rect x="868" y="432" width="134" height="26" rx="5"
+        fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="935" y="449" text-anchor="middle"
+        font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.06em">METRIC VIEWS</text>
+
+  <rect x="744" y="468" width="90" height="26" rx="5"
+        fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="789" y="485" text-anchor="middle"
+        font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.06em">POWER BI</text>
+
+  <!-- Branding -->
+  <text x="1155" y="595" text-anchor="end"
+        font-family="'SF Mono', 'Fira Code', monospace"
+        font-size="12" fill="#475569" letter-spacing="0.06em">tjbrown.ai</text>
+
+  <!-- Corner accent lines (top-left) -->
+  <line x1="0"  y1="0" x2="60" y2="0"  stroke="#63f2ca" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="0"  y1="0" x2="0"  y2="60" stroke="#63f2ca" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Bottom-right -->
+  <line x1="1200" y1="630" x2="1140" y2="630" stroke="#63f2ca" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="1200" y1="630" x2="1200" y2="570" stroke="#63f2ca" stroke-width="2" stroke-opacity="0.5"/>
+
+</svg>
