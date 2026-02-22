@@ -7,8 +7,6 @@ categories: ["Databricks", "Semantic Modeling"]
 tags: ["metric-views", "power-bi", "databricks", "semantic-layer"]
 ---
 
-## Why This Matters
-
 This blog post is for you: the Power BI Developer. If you're reading this, perhaps you've already mastered Power BI semantic modeling. You know how to create Power BI data models with relationships, and understand how to use DAX to create calculated measures and calculated measures.
 
 I have some good news. **Those semantic modeling skills are transferrable**. The better news: **Databricks Metric Views are simpler and more powerful than Power BI semantic models**. If you haven't taken a look at Metric Views for a while, I do believe now is the time to get ahead of this, because the calculation capabilities. 
