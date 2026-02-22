@@ -7,8 +7,6 @@ categories: ["Databricks", "Semantic Modeling"]
 tags: ["metric-views", "power-bi", "databricks", "semantic-layer"]
 ---
 
-## Why This Matters
-
 This blog post is for you: the Power BI Developer. If you're reading this, perhaps you've already mastered Power BI semantic modeling. You know how to create Power BI data models with relationships, and understand how to use DAX to create calculated measures and calculated measures.
 
 I have some good news. **Those semantic modeling skills are transferrable**. The better news: **Databricks Metric Views are simpler and more powerful than Power BI semantic models**. If you haven't taken a look at Metric Views for a while, I do believe now is the time to get ahead of this, because the calculation capabilities. 
@@ -21,50 +19,28 @@ In this series, I'll walk to through Metric Views conceptually so you can unders
 
 ---
 
-## The Core Analogy: From PBIX to Lakehouse
+## From PBIX to Governed Lakehouse Asset
 
-### Power BI Mental Model
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('iframe[scrolling="no"]').forEach(function (iframe) {
+        iframe.addEventListener('load', function () {
+            try {
+                var h = iframe.contentDocument.documentElement.scrollHeight;
+                if (h > 0) iframe.style.height = (h + 8) + 'px';
+            } catch (e) {}
+        });
+    });
+});
+</script>
 
-```
-(Gold) Data → Connections → PBIX Semantic Model (DAX) → Power BI Dashboards
-           ↓
-           Only accessible inside Power BI Desktop/Fabric
-           One file per semantic model
-           Version control is messy
-           Security can be nexted between source systems and the semantic model
-```
-
-### Databricks Mental Model
-
-```
-(Gold) Data → Metric Views (YAML) → Dashboards / Genie / Any Tool
-                                              ↓
-                                              Governed in Unity Catalog
-                                              Versioned like code
-                                              One source of truth
-                                              Accessible everywhere
-```
-
-**The key difference:** Your semantic layer isn't a proprietary artifact—it's a governed database object.
+<iframe src="/diagrams/01-powerbi-vs-databricks-flow.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ---
 
-## Concept Mapping: Everything You Know, Translated
+## Concept Mapping
 
-| Power BI Concept | Databricks Equivalent | Key Difference |
-|---|---|---|
-| **Semantic Model** | **Metric View** | Lives in lakehouse, not PBIX |
-| **DAX Calculated Measure** | **Measure Expression** | Defined with SQL syntax |
-| **DAX Calculated Column** | **Dimension Expression** | Measure expression defined with SQL syntax |
-| **Dimension Table** | **Dimensions (in YAML)** | Defined per expression instead of per table
-| **Row-Level Security** | **Unity Catalog RLS** | Governance + filtering, not token-based |
-
-### Why This Matters to You
-
-1. **No procedural DAX** — You write declarative YAML instead. Less "how" logic, more "what" definitions.
-2. **Metrics are discoverable** — Genie (Databricks' AI/BI tool) automatically surfaces your metrics for natural-language queries.
-3. **Separation of concerns** — Dimension definitions and measure definitions are separate, not tangled in DAX logic.
-4. **Reusability is enforced** — Child views can layer metrics without redefining KPIs (hard to do in Power BI).
+<iframe src="/diagrams/03-concept-mapping.html" width="100%" height="500" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ---
 
@@ -86,7 +62,7 @@ In Databricks:
 
 ### Problem 2: The DAX Complexity
 
-DAX measures are powerful but procedural. Figuring out filter context when stacking multiple filter expressions inside a CALCULATE() can be a challenging for SQL experts. Business users - forget about it. Here, we define exactly the behavior we want. We can dig deeper into some of those more complex examples in future posts, but the key point is that you don't need to understand the "how" of DAX filter context to define a metric. You just need to know "what" you want to calculate.
+DAX measures are powerful but difficult to master. I'd even go as far as to say that mastering DAX is more difficult than mastering SQL because its far less intuitive once you get out of the basic examples. Figuring out filter context when stacking multiple filter expressions inside a CALCULATE() can be confusing for SQL experts. Business users - forget about it. Here, we define exactly the behavior we want. We can dig deeper into some of those more complex examples in future posts, but the key point is that you don't need to understand the "how" of DAX filter context to define a metric. You just need to know "what" you want to calculate.
 
 ```dax
 // Power BI DAX
@@ -119,44 +95,14 @@ In Power BI:
 - "Revenue" in Dashboard A ≠ "Revenue" in Dashboard B
 
 In Databricks:
-- Metric Views enforce one definition
-- Dashboards and Genie both query the same metric definition
+
+- Metric Views enforce a single definition
+- AI/BI tools all query the same metric definition
 - Consistency is structural, not policy-based
 
 ---
 
-## The Architecture: Metric Views in Context
-
-Here's where Metric Views sit in a Databricks data architecture:
-
-```
-Lakehouse (Delta Lake)
-├── Bronze Layer (raw data)
-├── Silver Layer (cleaned, conformed)
-├── Gold Layer (star schema, optimized for analytics)
-│   ├── Fact: sales_orders
-│   ├── Dimension: dim_customer
-│   ├── Dimension: dim_product
-│   └── Dimension: dim_date
-│
-└── Semantic Layer (Metric Views) ← You are here
-    ├── mv_sales_orders_metrics (base)
-    ├──── mv_sales_orders_finance (child view - adds margin)
-    └──── mv_sales_orders_marketing (child view - adds attribution)
-         ↓
-    Consumed by:
-    - AI/BI Dashboards
-    - Genie (natural language queries)
-    - SQL analysts
-    - Downstream tools
-```
-
-**Key insight:** Metric Views sit *between* your Gold schema and consumers. They enforce semantics without blocking access.
-
----
-
 ## Queries are Simple, Familiar SQL
-
 
 ```sql
 SELECT
@@ -202,6 +148,7 @@ Its concise, easy to read, and easy to manage.
 ### The Rise of the Lakehouse
 
 Companies are consolidating:
+
 - Data warehousing is moving from legacy platforms to Delta Lake.
 - BI tools are expanding: Power BI, Tableau, Looker, and Sigma all integrate with Databricks. In the age of AI, we should design our semantic layers to be tool-agnostic, and Metric Views are built for that.
 - Governance: Unity Catalog enforces access control at the data layer. You get full lineage an auditability for your metrics from ingestion to reporting with no additional tooling or configuration.
@@ -209,11 +156,13 @@ Companies are consolidating:
 ### Purpose-built for the AI Era
 
 Genie (Databricks' natural-language BI tool) changes the game:
+
 - Analysts ask questions in English
 - Genie needs clear metric definitions to answer correctly
 - Metric Views are *designed* for Genie integration
 
 ### Licensing
+
 If your data is already in Databricks, you dont have to pay per-user licensing fee for AI/BI Dashboards or Genie. That's all included. Moreover, you no longer have to compromise on the reusability and centralization of your calculation logic. You now have Metric Views available - also with no additional licensing.
 
 ### The Cost of Manual Consistency
