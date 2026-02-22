@@ -19,7 +19,7 @@ In this series, I'll walk to through Metric Views conceptually so you can unders
 
 ---
 
-## The Core Analogy: From PBIX to Lakehouse
+## From PBIX to Governed Lakehouse Asset
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ---
 
-## Concept Mapping: Everything You Know, Translated
+## Concept Mapping
 
 | Power BI Concept | Databricks Equivalent | Key Difference |
 |---|---|---|
@@ -70,7 +70,7 @@ In Databricks:
 
 ### Problem 2: The DAX Complexity
 
-DAX measures are powerful but procedural. Figuring out filter context when stacking multiple filter expressions inside a CALCULATE() can be a challenging for SQL experts. Business users - forget about it. Here, we define exactly the behavior we want. We can dig deeper into some of those more complex examples in future posts, but the key point is that you don't need to understand the "how" of DAX filter context to define a metric. You just need to know "what" you want to calculate.
+DAX measures are powerful but difficult to master. I'd even go as far as to say that mastering DAX is more difficult than mastering SQL because its far less intuitive once you get out of the basic examples. Figuring out filter context when stacking multiple filter expressions inside a CALCULATE() can be confusing for SQL experts. Business users - forget about it. Here, we define exactly the behavior we want. We can dig deeper into some of those more complex examples in future posts, but the key point is that you don't need to understand the "how" of DAX filter context to define a metric. You just need to know "what" you want to calculate.
 
 ```dax
 // Power BI DAX
@@ -103,8 +103,9 @@ In Power BI:
 - "Revenue" in Dashboard A ≠ "Revenue" in Dashboard B
 
 In Databricks:
-- Metric Views enforce one definition
-- Dashboards and Genie both query the same metric definition
+
+- Metric Views enforce a single definition
+- AI/BI tools all query the same metric definition
 - Consistency is structural, not policy-based
 
 ---
@@ -113,27 +114,7 @@ In Databricks:
 
 Here's where Metric Views sit in a Databricks data architecture:
 
-```
-Lakehouse (Delta Lake)
-├── Bronze Layer (raw data)
-├── Silver Layer (cleaned, conformed)
-├── Gold Layer (star schema, optimized for analytics)
-│   ├── Fact: sales_orders
-│   ├── Dimension: dim_customer
-│   ├── Dimension: dim_product
-│   └── Dimension: dim_date
-│
-└── Semantic Layer (Metric Views) ← You are here
-    ├── mv_sales_orders_metrics (base)
-    ├──── mv_sales_orders_finance (child view - adds margin)
-    └──── mv_sales_orders_marketing (child view - adds attribution)
-         ↓
-    Consumed by:
-    - AI/BI Dashboards
-    - Genie (natural language queries)
-    - SQL analysts
-    - Downstream tools
-```
+<img src="/images/01-architecture-diagram.svg" width="100%" style="border-radius: 8px; margin: 20px 0;" alt="Lakehouse architecture diagram showing Bronze, Silver, Gold layers flowing into Metric Views semantic layer, consumed by dashboards, Genie, SQL analysts, and downstream tools"/>
 
 **Key insight:** Metric Views sit *between* your Gold schema and consumers. They enforce semantics without blocking access.
 
