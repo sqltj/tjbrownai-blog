@@ -40,14 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ## Concept Mapping
 
-| Power BI Concept | Databricks Equivalent | Key Difference |
-|---|---|---|
-| **Semantic Model** | **Metric View** | Lives in lakehouse, not PBIX |
-| **DAX Calculated Measure** | **Measure Expression** | Defined with SQL syntax |
-| **DAX Calculated Column** | **Dimension Expression** | Measure expression defined with SQL syntax |
-| **Dimension Table** | **Dimensions (in YAML)** | Defined per expression instead of per table
-| **Row-Level Security** | **Unity Catalog RLS** | Governance + filtering, not token-based |
-
 <iframe src="/diagrams/03-concept-mapping.html" width="100%" height="500" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
 
 ---
@@ -110,20 +102,7 @@ In Databricks:
 
 ---
 
-## The Architecture: Metric Views in Context
-
-Here's where Metric Views sit in a Databricks data architecture:
-
-<img src="/images/01-architecture-diagram.svg" width="100%" style="border-radius: 8px; margin: 20px 0;" alt="Lakehouse architecture diagram showing Bronze, Silver, Gold layers flowing into Metric Views semantic layer, consumed by dashboards, Genie, SQL analysts, and downstream tools"/>
-
-**Key insight:** Metric Views sit *between* your Gold schema and consumers. They enforce semantics without blocking access.
-
-<iframe src="/diagrams/02-lakehouse-architecture.html" width="100%" height="580" frameborder="0" scrolling="no" style="border-radius: 8px; margin: 20px 0; overflow: hidden;"></iframe>
-
----
-
 ## Queries are Simple, Familiar SQL
-
 
 ```sql
 SELECT
@@ -169,6 +148,7 @@ Its concise, easy to read, and easy to manage.
 ### The Rise of the Lakehouse
 
 Companies are consolidating:
+
 - Data warehousing is moving from legacy platforms to Delta Lake.
 - BI tools are expanding: Power BI, Tableau, Looker, and Sigma all integrate with Databricks. In the age of AI, we should design our semantic layers to be tool-agnostic, and Metric Views are built for that.
 - Governance: Unity Catalog enforces access control at the data layer. You get full lineage an auditability for your metrics from ingestion to reporting with no additional tooling or configuration.
@@ -176,11 +156,13 @@ Companies are consolidating:
 ### Purpose-built for the AI Era
 
 Genie (Databricks' natural-language BI tool) changes the game:
+
 - Analysts ask questions in English
 - Genie needs clear metric definitions to answer correctly
 - Metric Views are *designed* for Genie integration
 
 ### Licensing
+
 If your data is already in Databricks, you dont have to pay per-user licensing fee for AI/BI Dashboards or Genie. That's all included. Moreover, you no longer have to compromise on the reusability and centralization of your calculation logic. You now have Metric Views available - also with no additional licensing.
 
 ### The Cost of Manual Consistency
