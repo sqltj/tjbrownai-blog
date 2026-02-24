@@ -76,6 +76,15 @@ params:
     copyCodeButton:
       enable: true
 
+    # Google Analytics GA4 tracking
+    analytics:
+      enable: true
+      services:
+        enable: true
+        google:
+          id: "G-XXXXXXXXXX"  # TODO: Replace with actual GA4 Measurement ID
+          respectDoNotTrack: true
+
   # Provide footer configuration.
   footer:
     enable: true
