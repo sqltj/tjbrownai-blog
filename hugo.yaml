@@ -82,7 +82,7 @@ params:
       services:
         enable: true
         google:
-          id: "G-XXXXXXXXXX"  # TODO: Replace with actual GA4 Measurement ID
+          id: "G-HP7V03YRF7"
           respectDoNotTrack: true
 
   # Provide footer configuration.
