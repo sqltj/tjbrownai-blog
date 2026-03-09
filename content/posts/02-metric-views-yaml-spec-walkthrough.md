@@ -1,7 +1,8 @@
 ---
-title: "The Metric Views YAML Spec: A Practical Walkthrough"
+title: "Metric Views: Basic Syntax"
 date: 2026-03-05
-draft: true
+draft: false
+hero: images/02-metric-views-thumbnail.svg
 categories: ["Databricks", "Semantic Modeling"]
 tags: ["metric-views", "databricks", "semantic-layer", "yaml", "data-modeling", "power-bi"]
 ---
