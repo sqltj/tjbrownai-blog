@@ -12,7 +12,7 @@ If you've read the docs and felt a little unsure about what each field does or w
 
 ---
 
-## The Full `CREATE` Statement
+## The `CREATE` Statement
 
 Before we look at the YAML, it's worth knowing how it fits into SQL. A Metric View is a SQL object created with a `WITH METRICS` clause:
 
@@ -73,7 +73,6 @@ A few things to note right away:
 - **`source`** — A fully-qualified three-part name (`catalog.schema.table`).
 - **Measures use aggregate functions** — `SUM`, `COUNT`, `AVG`, `MIN`, `MAX`. A measure without an aggregation will fail.
 - **`MEASURE()` in queries** — All measures must be wrapped in `MEASURE()`. You can't just `SELECT SalesAmount`.
-- **`GROUP BY ALL`** — A convenience that groups by every non-measure column in the SELECT. You'll use this constantly.
 
 **Your DAX skills transfer directly.** The aggregation logic is identical — only the syntax changes:
 
@@ -86,7 +85,7 @@ A few things to note right away:
 
 ## Step 2: Adding a Calculated Text Dimension
 
-Raw column values often aren't query-ready. In Power BI you'd handle this with a calculated column or a DAX expression. In Metric Views, you put the transformation directly in the dimension's `expr` field — it's just SQL.
+Raw column values often aren't query-ready. In Power BI you'd handle this with a calculated column. In Metric Views, you put the transformation directly in the dimension's `expr` field — it's just SQL.
 
 Let's add a human-readable order size category based on `SalesAmount`:
 
@@ -132,9 +131,9 @@ GROUP BY ALL
 ORDER BY total_sales DESC
 ```
 
-The `expr` field supports any SQL expression — `CASE`, `DATE_TRUNC`, `CAST`, string functions, anything your SQL warehouse understands. Multi-line CASE expressions work as shown above; YAML preserves the indentation.
+The `expr` field supports any SQL expression — `CASE`, `DATE_TRUNC`, `CAST`, string functions, anything your SQL warehouse understands. 
 
-This is the equivalent of a calculated column in your semantic model. In DAX you'd write:
+This is the equivalent of a calculated column in your semantic model. In DAX you'd:
 
 ```dax
 Order Size =
@@ -146,13 +145,13 @@ Order Size =
   )
 ```
 
-Same logic — but in a Metric View it's defined once and applies consistently everywhere the view is queried, with no risk of a developer redefining it differently in a downstream report.
+Same logic, but in a Metric View. The one thing I really want to hammer home is that you've been working in Power BI, you already know this stuff because you aren't just a Power BI developer, report writer, etc. -- you're a semantic modeler. The skills you have building models in Power BI are directly applicable to building Metric Views. You don't need to learn new concepts, just some new syntax.
 
 ---
 
-## The Complete Picture
+## Complete Example
 
-Here's the full YAML spec for reference:
+Here's the full YAML spec for reference. We'll dig deeper into the different components and review some common use cases in future posts, but this is what a complete Metric View definition looks like:
 
 ```yaml
 version: 1.1            # "1.1" for standard views, "0.1" required for window measures
