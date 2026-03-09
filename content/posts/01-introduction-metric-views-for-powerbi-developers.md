@@ -80,11 +80,9 @@ YAML measures are declarative:
   - name: Revenue YTD
     expr: SUM(o_totalprice)
     window:
-      order: Date
-      partition_by: OrderYear
-      range: cumulative
-      semiadditive: last
-
+      - order: Order Date
+        range: cumulative
+        semiadditive: last
 ```
 
 ### Problem 3: The Dashboard Consistency Problem
